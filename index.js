@@ -23,7 +23,7 @@ async function send(){
     for(member of receivers){
         if(alreadySent.find(e => e === member.email.toLocaleLowerCase())) continue; 
         try {
-            await transporter.sendMail({
+            const res = await transporter.sendMail({
 
                 // ################################
                 from: 'OpenMindsClub',
@@ -45,17 +45,20 @@ async function send(){
 
             });
             alreadySent.push(member.email.toLocaleLowerCase());
-
+            if(!res || !res.accepted.length){
+                console.log("Failed: " + member.email);
+                failed.push(member);
+            }
         } catch (error) {
             console.log("Failed: " + member.email);
             failed.push(member);
         }
-        if(!failed.length) {
-            console.log('All good !');
-            return;
-        }
-        fs.writeFileSync('./failed.json', failed);
-        console.log(`\nSome emails couldn't be sent! check the file: failed.json`);
-        console.log(`You can copy the content of failed.json to list.json and run the script again.`);
     }
+    if(!failed.length) {
+        console.log('All good !');
+        return;
+    }
+    fs.writeFileSync('./failed.json', failed);
+    console.log(`\nSome emails couldn't be sent! check the file: failed.json`);
+    console.log(`You can copy the content of failed.json to list.json and run the script again.`);
 }
