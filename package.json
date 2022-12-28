@@ -1,0 +1,16 @@
+{
+  "name": "email-sender",
+  "version": "1.0.0",
+  "description": "OMC email sender",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "author": "AYMEN GH",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "handlebars": "^4.7.7",
+    "nodemailer": "^6.8.0"
+  }
+}
