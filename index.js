@@ -23,7 +23,7 @@ async function send() {
     const retry = 0;
     let count = 0;
     while (count < receivers.length && retry < 7) {
-        const member = receivers[i];
+        const member = receivers[count];
         if(alreadySent.includes(member.email.toLocaleLowerCase())) {
             count++;
             continue;
@@ -53,4 +53,10 @@ async function send() {
             continue;
         }
     }
+
+    if (retry > 6) {
+        console.log("\n\nFailed!");
+        return;
+    }
+    console.log("\n\nAll good!");
 }
