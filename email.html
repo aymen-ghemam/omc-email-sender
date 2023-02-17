@@ -6,39 +6,104 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title></title>
     <style>
+      body {
+        font-family: Helvetica, sans-serif;
+        box-sizing: border-box;
+      }
       .container {
+        max-width: 600px;
+        margin: 0 auto;
         background-color: white;
         padding: 1em;
         text-align: center;
       }
-      p {
-        max-width: 550px;
-        padding: 1em 0;
-      }
       .container * {
         margin: 0 auto;
+      }
+      p {
+        padding: 0.3em 0;
       }
       tr {
         text-align: start;
         text-decoration: none;
       }
+      .header,
+      .cisco {
+        background-color: rgb(80, 80, 80);
+      }
+      .header {
+        padding: 1em;
+      }
+      .cisco {
+        width: 310px;
+        display: table;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: white;
+      }
+      .cisco > * {
+        display: table-cell;
+        vertical-align: middle;
+      }
+      .cisco * {
+        margin: 0 0;
+      }
+      .socials {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .green {
+        color: #32de84;
+        padding: 1em;
+      }
+      .content {
+        text-align: left;
+        padding: 1em;
+      }
+      h3{
+        color: rgb(0, 123, 255);
+      }
     </style>
   </head>
   <body>
     <div class="container">
-      <!-- OMC LOGO -->
-      <img
-        height="150"
-        src="https://cdn.discordapp.com/attachments/659886501710266401/1043622463352873092/unknown.png"
-        alt="OMC"
-      />
-
-      <!-- **************************************** -->
-      <p>
-        Bonjour {{name}} <br />
-
-        SOME TEXT...
-      </p>
+      <div class="header">
+        <div class="cisco">
+          <img
+            width="80"
+            src="https://media.discordapp.net/attachments/731259416829231167/1057770638745550948/cisco-logo.png"
+            alt="CISCO"
+          />
+          <div class="title">Networking Academy</div>
+        </div>
+      </div>
+      <!-- <h2 class="green">Félicitations!</h2> -->
+      <div class="content">
+        <p>Bonjour {{name}},</p>
+        <p>Nous y voilà de retour avec notre programme CCNA 
+          Nous espérons que la phase des examens était un succès en revanche il est temps de poursuivre votre formation CCNA. </p>
+        <p>
+          Sur ce on vous invite a des séances en ligne pour ce vendredi et samedi 10,11 février a 19h. 
+          Au programme:
+          <ol>
+            <li>RÉVISION DU MODÈLE OSI</li>
+            <li>STP</li>
+          </ol>
+        </p>
+        <p>
+          lien:
+          <a
+            href="https://meet.google.com/bcr-styi-cgh"
+            rel="noreferrer"
+            target="_blank"
+          >
+          https://meet.google.com/bcr-styi-cgh
+          </a>
+        </p>
+        <p>Nous avons hâte de vous voir tous à l'heure !</p>
+      </div>
+      <h3>OMC x CCNA!</h3>
       <!-- **************************************** -->
 
       <!-- OMC FOOTER -->
@@ -283,7 +348,7 @@
               </td>
             </tr>
             <tr>
-              <td style="padding: 0px 1px 0px 0px">
+              <td class="socials" style="padding: 0px 1px 0px 0px">
                 <table cellpadding="0" cellspacing="0" border="0">
                   <tbody>
                     <tr>
