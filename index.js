@@ -19,46 +19,38 @@ const alreadySent = [];
 const failed = [];
 send();
 
-async function send(){
-    for(member of receivers){
-        if(alreadySent.find(e => e === member.email.toLocaleLowerCase())) continue; 
+async function send() {
+    const retry = 0;
+    let count = 0;
+    while (count < receivers.length && retry < 7) {
+        const member = receivers[i];
+        if(alreadySent.includes(member.email.toLocaleLowerCase())) {
+            count++;
+            continue;
+        }; 
         try {
             const res = await transporter.sendMail({
-
-                // ################################
-                from: 'OpenMindsClub',
+                from: process.env.SENDER,
                 to: member.email,
-                subject: "SUBJECT!",
+                subject: process.env.SUBJECT,
                 html: template({
-                    // DATA TO REPLACE IN THE TEMPLATE
                     name: member.name 
+                    ? member.name.
+                        toLowerCase()
+                        .replace(/./, (x) => x.toUpperCase())
+                        .replace(/[^']\b\w/g, (y) => y.toUpperCase())
+                    : ""
                 }),
-
-                // IF YOU HAVE ATTACHEMENTS
-                attachments: [
-                    // {
-                    //   filename: "filename.pdf",
-                    //   path: __dirname + `/attachements/${member.filename}.pdf`,
-                    // },
-                ],
-                // ################################
-
             });
-            alreadySent.push(member.email.toLocaleLowerCase());
             if(!res || !res.accepted.length){
-                console.log("Failed: " + member.email);
-                failed.push(member);
+                throw new Error("Error sending to: ", member.email);
             }
+            alreadySent.push(member.email.toLocaleLowerCase());
+            count++;
         } catch (error) {
-            console.log("Failed: " + member.email);
-            failed.push(member);
+            console.log(`${retry+1} retry sending to: , ${member.email}`);
+            retry++;
+            continue;
         }
     }
-    if(!failed.length) {
-        console.log('All good !');
-        return;
-    }
-    fs.writeFileSync('./failed.json', failed);
-    console.log(`\nSome emails couldn't be sent! check the file: failed.json`);
-    console.log(`You can copy the content of failed.json to list.json and run the script again.`);
 }
