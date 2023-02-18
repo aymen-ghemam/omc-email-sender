@@ -20,7 +20,7 @@ const failed = [];
 send();
 
 async function send() {
-    const retry = 0;
+    let retry = 0;
     let count = 0;
     while (count < receivers.length && retry < 7) {
         const member = receivers[count];
@@ -45,12 +45,12 @@ async function send() {
             if(!res || !res.accepted.length){
                 throw new Error("Error sending to: ", member.email);
             }
+            console.log("sent to ", member.email);
             alreadySent.push(member.email.toLocaleLowerCase());
             count++;
         } catch (error) {
             console.log(`${retry+1} retry sending to: , ${member.email}`);
             retry++;
-            continue;
         }
     }
 
