@@ -2,7 +2,7 @@ require('dotenv').config();
 const nodemailer = require('nodemailer');
 const handlebars = require('handlebars');
 const fs = require('fs');
-const receivers = require('./list.json');
+const receivers = require('./test.json');
 
 const transporter = nodemailer.createTransport({
   service: 'gmail',
@@ -39,8 +39,14 @@ async function send() {
                         toLowerCase()
                         .replace(/./, (x) => x.toUpperCase())
                         .replace(/[^']\b\w/g, (y) => y.toUpperCase())
-                    : ""
+                    : "Applicant"
                 }),
+                attachments: [
+                    {
+                        filename: "agenda.png",
+                        path: "https://media.discordapp.net/attachments/731259416829231167/1086606048334458900/agndaai2-01.png"
+                    }
+                ]
             });
             if(!res || !res.accepted.length){
                 throw new Error("Error sending to: ", member.email);
