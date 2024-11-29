@@ -1,523 +1,609 @@
-<!DOCTYPE html>
-<html lang="fr">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title></title>
-    <style>
-      body {
-        font-family: Helvetica, sans-serif;
-        font: small/1.7 Helvetica, sans-serif;
-        box-sizing: border-box;
-      }
-      .container {
-        max-width: 630px;
-        margin: 0 auto;
-        background-color: white;
-        padding: 1em;
-        text-align: center;
-      }
-      .container * {
-        margin: 0 auto;
-      }
-      /* .container table {
-        margin: 0;
-      } */
-      p {
-        padding: 0.3em 0;
-      }
-      tr {
-        text-align: center;
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Open Minds Club</title>
+    <style type="text/css">
+      body,
+      table,
+      td,
+      a {
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
         text-decoration: none;
       }
-      .header,
-      .cisco {
-        background-color: rgb(27, 27, 27);
+      table,
+      td {
+        mso-table-lspace: 0pt;
+        mso-table-rspace: 0pt;
       }
-      .header {
-        padding: 1em;
+      img {
+        -ms-interpolation-mode: bicubic;
       }
-      .cisco {
-        width: 310px;
-        display: table;
-        font-size: 1.4rem;
-        font-weight: 700;
-        font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-        /* color: white; */
-        color: #ffffff;
+
+      img {
+        border: 0;
+        height: auto;
+        line-height: 100%;
+        outline: none;
+        text-decoration: none;
       }
-      .cisco > * {
-        display: table-cell;
-        vertical-align: middle;
+      table {
+        border-collapse: collapse !important;
       }
-      .cisco * {
-        margin: 0 0;
+      body {
+        height: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
       }
+
+      a[x-apple-data-detectors] {
+        color: inherit !important;
+        text-decoration: none !important;
+        font-size: inherit !important;
+        font-family: inherit !important;
+        font-weight: inherit !important;
+        line-height: inherit !important;
+      }
+
+      .button {
+        min-width: 100px;
+      }
+
       .socials {
         text-align: center;
         margin: 0;
       }
-      .green {
-        color: #03e46f;
-        /* padding: 1em; */
-      }
-      .content {
-        text-align: start;
-        padding: 1em;
-      }
-      h3 {
-        color: rgb(0, 123, 255);
-      }
-      .agenda img {
-        display: block;
-        margin: 0 auto;
-      }
-      .logo {
-        width: 180px;
-        margin: 0 auto;
-        background-color: white;
+
+      @media only screen and (max-width: 600px) {
+        .responsive-table {
+          width: 100% !important;
+        }
+        .mobile-center {
+          text-align: center !important;
+        }
+        .mobile-full-width {
+          width: 100% !important;
+          margin-bottom: 10px !important;
+        }
       }
     </style>
   </head>
-  <body>
-    <div class="container">
-      <!-- <h2 class="green">Félicitations!</h2> -->
-      <div class="content">
-        <div class="logo">
-          <img
-            height="150"
-            src="https://ci3.googleusercontent.com/proxy/TDz3uqBt-9CPuCJo8kuDDqilMGlfoI5tI5Hcya8FpZzAc1TXpLFVN6Z6_XZ48OYG7QdsogW5kLvwtlvG-9BHIJNqMCK1nTk1rwAfrKpMaWw7h1tv1Ha6wUOGQ6x7dixeloXwV5B2W3XAAcNR=s0-d-e1-ft#https://cdn.discordapp.com/attachments/659886501710266401/1043622463352873092/unknown.png"
-            alt="OpenMindsClub"
-            class="CToWUd a6T"
-            data-bit="iit"
-            tabindex="0"
-          />
-        </div>
-        <br />
+  <body
+    style="
+      margin: 0;
+      padding: 0;
+      background-color: #04090f;
+      font-family: 'Ubuntu', sans-serif;
+      color: white;
+    "
+  >
+    <table
+      border="0"
+      cellpadding="0"
+      cellspacing="0"
+      width="100%"
+      class="responsive-table"
+      style="max-width: 600px; margin: 0 auto"
+    >
+      <tr>
+        <td align="center" style="padding: 20px">
+          <h1 style="font-size: 40px; color: #007aff; text-align: center">
+            Open Minds Club
+          </h1>
 
-        <p>Dear {{name}},</p>
-        <p>
-          We are pleased to inform you that your application for the AI Bootcamp
-          has been accepted! <span class="green"><b>Congratulations!</b></span> You are among the few lucky
-          candidates who have been selected from a pool of highly competitive
-          applications.
-        </p>
-        <p>
-          We appreciate your interest in our program and your dedication to
-          learning more about AI.
-        </p>
-        <p>
-          Please take a moment to review our agenda, which we have attached to
-          this email. It outlines the topics we will cover throughout the
-          duration of the bootcamp.
-        </p>
-        <p>The sessions take place from <b>March 19 to 23, from 2 p.m. to 4:30 p.m</b>.
-            at
-            <a
-              href="https://goo.gl/maps/CtB2f6y5B5jGcVc68"
-              rel="noreferrer"
-              target="_blank"
+          <p
+            style="
+              max-width: 600px;
+              font-size: 18px;
+              font-weight: 400;
+              line-height: 130%;
+              margin-top: 20px;
+              text-align: center;
+            "
+          >
+            Where Open Source Minds Come Together.
+          </p>
+
+          <div
+            style="
+              margin-top: 50px;
+              width: 100%;
+              background-color: #04090f;
+              border-radius: 12px 12px 0 0;
+            "
+          >
+            <div
+              style="
+                width: 100%;
+                height: 50px;
+                background-color: #13181e;
+                border-radius: 12px 12px 0 0;
+                padding: 0 20px;
+                color: white;
+                position: relative;
+              "
             >
-            CRI
-            </a> 
-            </p>
-        <p>
-          Additionally, please make sure to bring your personal computer with
-          you, as we will be using it for hands-on exercises during the
-          sessions.
-        </p>
-        <p>
-          To confirm your participation, please reply to this email indicating
-          that you accept the invitation.
-        </p>
-        <p>We look forward to welcoming you to our AI Bootcamp!</p>
-        <br />
-        <br />
-        <p>Best regards,</p>
-        <p>[Open Minds Club ]</p>
-
-        <!-- <br /><br /> -->
-      </div>
-      <!-- **************************************** -->
-
-      <!-- OMC FOOTER -->
-      <div class="footer">
-        <table cellpadding="0" cellspacing="0" border="0">
-          <tbody>
-            <tr>
-              <td
+              <div
                 style="
-                  padding: 0px 1px 25px 0px;
-                  font-family: Arial, sans-serif;
-                  font-size: 13px;
-                  line-height: 17px;
-                  white-space: nowrap;
+                  position: absolute;
+                  left: 10px;
+                  top: 50%;
+                  transform: translateY(-50%);
+                  display: flex;
                 "
-              ></td>
-            </tr>
-            <tr>
-              <td style="padding: 0px 1px 0px 0px">
-                <table cellpadding="0" cellspacing="0" border="0">
-                  <tbody>
-                    <tr>
-                      <td
-                        style="
-                          padding: 25px 1px 25px 0px;
-                          border-top: 2px solid rgb(0, 123, 255);
-                          border-bottom: 2px solid rgb(0, 123, 255);
-                        "
-                      >
-                        <table cellpadding="0" cellspacing="0" border="0">
-                          <tbody>
-                            <tr>
-                              <td
-                                valign="middle"
-                                style="padding: 0px 30px 0px 0px"
-                              >
-                                <table
-                                  cellpadding="0"
-                                  cellspacing="0"
-                                  border="0"
-                                >
-                                  <tbody>
-                                    <tr>
-                                      <td style="padding: 0px 1px 0px 0px">
-                                        <p style="margin: 1px">
-                                          <a
-                                            href="https://openmindsclub.net/"
-                                            rel="noreferrer"
-                                            target="_blank"
-                                            data-saferedirecturl="https://www.google.com/url?q=https://openmindsclub.net/&amp;source=gmail&amp;ust=1669061402397000&amp;usg=AOvVaw0Zv3T-KbDSkovrtJNqkKPt"
-                                            ><img
-                                              src="https://cdn.discordapp.com/attachments/659886501710266401/1043622463352873092/unknown.png"
-                                              alt=""
-                                              height="79"
-                                              style="
-                                                display: block;
-                                                border: 0px;
-                                                max-width: 150px;
-                                              "
-                                              class="CToWUd"
-                                              data-bit="iit"
-                                          /></a>
-                                        </p>
-                                      </td>
-                                    </tr>
-                                  </tbody>
-                                </table>
-                              </td>
-                              <td
-                                width="10"
-                                style="padding: 0px 1px 0px 0px"
-                              ></td>
-                              <td style="padding: 0px 1px 0px 0px">
-                                <table
-                                  cellpadding="0"
-                                  cellspacing="0"
-                                  border="0"
-                                >
-                                  <tbody>
-                                    <tr>
-                                      <td
-                                        valign="middle"
-                                        style="
-                                          padding: 1px 5px 1px 0px;
-                                          vertical-align: middle;
-                                        "
-                                      >
-                                        <p style="margin: 1px">
-                                          <img
-                                            src="https://ci3.googleusercontent.com/proxy/uLriLhTS24DuFSosOnRAxWu0Q0LHWhTsV-DIMkF4boO2ufLonZM96ynecgwcPVahfmoIFS4qj3Y-0KO-2WdxO8RNLkYfdGF80TFHUGyE9C8j=s0-d-e1-ft#https://signaturehound.com/api/v1/png/email/default/007bff.png"
-                                            alt=""
-                                            width="18"
-                                            height="18"
-                                            style="
-                                              display: block;
-                                              border: 0px;
-                                              max-width: 18px;
-                                            "
-                                            class="CToWUd"
-                                            data-bit="iit"
-                                          />
-                                        </p>
-                                      </td>
-                                      <td
-                                        style="
-                                          line-height: 17px;
-                                          padding: 1px 0px;
-                                          vertical-align: middle;
-                                        "
-                                      >
-                                        <p style="margin: 1px">
-                                          <a
-                                            href="mailto:openmindsclub@gmail.com"
-                                            style="
-                                              font-family: Arial, sans-serif;
-                                              font-size: 13px;
-                                              line-height: 17px;
-                                              white-space: nowrap;
-                                              color: rgb(136, 136, 136);
-                                            "
-                                            rel="noreferrer"
-                                            target="_blank"
-                                            >openmindsclub@gmail.com</a
-                                          >
-                                        </p>
-                                      </td>
-                                    </tr>
+              >
+                <div
+                  style="
+                    width: 15px;
+                    height: 15px;
+                    border-radius: 50%;
+                    background-color: #ff6059;
+                    margin-right: 5px;
+                  "
+                ></div>
+                <div
+                  style="
+                    width: 15px;
+                    height: 15px;
+                    border-radius: 50%;
+                    background-color: #ffbd2e;
+                    margin-right: 5px;
+                  "
+                ></div>
+                <div
+                  style="
+                    width: 15px;
+                    height: 15px;
+                    border-radius: 50%;
+                    background-color: #29ca42;
+                  "
+                ></div>
+              </div>
+              <p
+                style="
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                  margin: 0;
+                "
+              >
+                Welcome!
+              </p>
+            </div>
+            <div
+              style="
+                padding: 30px;
+                font-family: 'Overpass Mono', monospace;
+                font-size: 16px;
+              "
+            >
+              <br />
+              <p style="margin: 0; text-align: left">
+                Dear Member, <br />
+                Thank you for taking the time and effort to register; we truly
+                appreciate your interest in our club!
+                <br />
+                <br />
 
-                                    <tr>
-                                      <td
-                                        valign="middle"
-                                        style="
-                                          padding: 1px 5px 1px 0px;
-                                          vertical-align: middle;
-                                        "
-                                      >
-                                        <p style="margin: 1px">
-                                          <img
-                                            src="https://ci5.googleusercontent.com/proxy/ySyKBlDgwc_-Rd0Wzdxs5XdA7NwZc7V6bOb6hZ7aY7NR5XpqP5hWaq50a8tIlkSSxO3kvZq4EqEKxeNpvZ0iz5MzLRKDG5FdWfNlv7QvaQ=s0-d-e1-ft#https://signaturehound.com/api/v1/png/map/default/007bff.png"
-                                            alt=""
-                                            width="18"
-                                            height="18"
-                                            style="
-                                              display: block;
-                                              border: 0px;
-                                              max-width: 18px;
-                                            "
-                                            class="CToWUd"
-                                            data-bit="iit"
-                                          />
-                                        </p>
-                                      </td>
-                                      <td
-                                        style="
-                                          line-height: 17px;
-                                          padding: 1px 0px;
-                                          vertical-align: middle;
-                                        "
-                                      >
-                                        <p style="margin: 1px">
-                                          <a
-                                            href="https://goo.gl/maps/aK2HEnzkUE31CWmw7"
-                                            style="
-                                              font-family: Arial, sans-serif;
-                                              font-size: 13px;
-                                              line-height: 17px;
-                                              white-space: nowrap;
-                                              color: rgb(136, 136, 136);
-                                            "
-                                            rel="noreferrer"
-                                            target="_blank"
-                                            data-saferedirecturl="https://www.google.com/url?q=https://goo.gl/maps/aK2HEnzkUE31CWmw7&amp;source=gmail&amp;ust=1669061402397000&amp;usg=AOvVaw0is83YykyJwTdNoNtd6Hzt"
-                                            >USTHB, Bab Ezzouar, Algeria</a
-                                          >
-                                        </p>
-                                      </td>
-                                    </tr>
-                                    <tr>
-                                      <td
-                                        valign="middle"
-                                        style="
-                                          padding: 1px 5px 1px 0px;
-                                          vertical-align: middle;
-                                        "
-                                      >
-                                        <p style="margin: 1px">
-                                          <img
-                                            src="https://ci3.googleusercontent.com/proxy/L0lEXqvo9FYjHSw13E5H2joJVTy9m9Xhs-8FfCa6RBuuAwJ9QLtR807bpfJljebAF7BMmlXWbQrP6_0rAvpnzb74u6VFRd0RuguRNE9-2o9OPhw=s0-d-e1-ft#https://signaturehound.com/api/v1/png/website/default/007bff.png"
-                                            alt=""
-                                            width="18"
-                                            height="18"
-                                            style="
-                                              display: block;
-                                              border: 0px;
-                                              max-width: 18px;
-                                            "
-                                            class="CToWUd"
-                                            data-bit="iit"
-                                          />
-                                        </p>
-                                      </td>
-                                      <td
-                                        style="
-                                          line-height: 17px;
-                                          padding: 1px 0px;
-                                          vertical-align: middle;
-                                        "
-                                      >
-                                        <p style="margin: 1px">
-                                          <a
-                                            href="https://openmindsclub.net/"
-                                            style="
-                                              font-family: Arial, sans-serif;
-                                              font-size: 13px;
-                                              line-height: 17px;
-                                              white-space: nowrap;
-                                              color: rgb(0, 123, 255);
-                                              font-weight: 700;
-                                            "
-                                            rel="noreferrer"
-                                            target="_blank"
-                                            data-saferedirecturl="https://www.google.com/url?q=https://openmindsclubnet/&amp;source=gmail&amp;ust=1669061402397000&amp;usg=AOvVaw0Zv3T-KbDSkovrtJNqkKPt"
-                                            >openmindsclub.net</a
-                                          >
-                                        </p>
-                                      </td>
-                                    </tr>
-                                  </tbody>
-                                </table>
-                              </td>
-                              <td
-                                width="15"
-                                style="padding: 0px 1px 0px 0px"
-                              ></td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+                We are thrilled to inform you that, after reviewing your
+                application, we are impressed by your motivation and enthusiasm
+                to join us. It is with great pleasure that we ACCEPT your
+                application and welcome you as a new member of OPENMINDS Club!
+                🎉 Congratulations!
+                <br />
+                <br />
+
+                We hope you are as excited as we are to embark on this journey
+                together. Buckle up, because being part of the OMC family
+                promises an incredible adventure filled with unforgettable
+                experiences!
+                <br />
+                <br />
+                To get started:
+                <br />
+                - Join our Discord server and introduce yourself — we’d love to
+                meet you there!
+                <br />
+                <br />
+                Let the adventure begin! 🚀
+                <br />
+                <br />
+                P.S.: Please do not reply to this email.
+                <br />
+                <br />
+                Stay connected and up-to-date with our activities and events by
+                following us on your favorite social media channels.
+                <br />
+                <br />
+                Warm regards,
+              </p>
+            </div>
+          </div>
+
+          <table
+            border="0"
+            cellpadding="0"
+            cellspacing="10"
+            width="100%"
+            style="margin-top: 30px"
+          >
+            <tr>
+              <td align="center" class="mobile-full-width">
+                <a
+                  href="https://openmindsclub.net/"
+                  style="
+                    display: inline-block;
+                    height: 48px;
+                    padding: 0 40px;
+                    border-radius: 6px;
+                    font-size: 16px;
+                    border: 2px solid #3173bb;
+                    color: #fff;
+                    text-decoration: none;
+                    line-height: 48px;
+                  "
+                >
+                  Website
+                </a>
+              </td>
+              <td align="center" class="button mobile-full-width">
+                <a
+                  href="https://discord.gg/DRayQBjN"
+                  style="
+                    display: inline-block;
+                    height: 48px;
+                    padding: 0 40px;
+                    border-radius: 6px;
+                    font-size: 16px;
+                    border: 2px solid #3173bb;
+                    color: #fff;
+                    text-decoration: none;
+                    line-height: 48px;
+                    background-color: #007aff;
+                  "
+                >
+                  Discord
+                </a>
               </td>
             </tr>
-            <tr>
-              <td class="socials" style="padding: 0px 1px 0px 0px">
-                <table cellpadding="0" cellspacing="0" border="0">
-                  <tbody>
-                    <tr>
-                      <td
-                        width="30"
-                        style="
-                          font-size: 0px;
-                          line-height: 0px;
-                          padding: 25px 1px 0px 0px;
-                        "
-                      >
-                        <p style="margin: 1px">
-                          <a
-                            href="https://web.facebook.com/openmindsclub"
-                            rel="noreferrer"
-                            target="_blank"
-                            data-saferedirecturl="https://www.google.com/url?q=https://web.facebook.com/openmindsclub&amp;source=gmail&amp;ust=1669061402397000&amp;usg=AOvVaw3LSTpZ7s0t5bYIQIBgIK1l"
-                            ><img
-                              src="https://ci5.googleusercontent.com/proxy/jJ50Cl38I8Lqk1cEokSLj_fGdkQpRvtB3oTmxQCzxw_tWVvzs8lXvqD9APc9Dr1PE9w-T3_TLBu5-CsXoZw3Lc2aA-UW9CrfAyuFeVfKS4ACD6X8=s0-d-e1-ft#https://signaturehound.com/api/v1/png/facebook/default/007bff.png"
-                              alt=""
-                              width="30"
-                              height="30"
-                              style="
-                                display: block;
-                                border: 0px;
-                                max-width: 30px;
-                              "
-                              class="CToWUd"
-                              data-bit="iit"
-                          /></a>
-                        </p>
-                      </td>
-                      <td width="3" style="padding: 0px 0px 1px"></td>
-                      <td
-                        width="30"
-                        style="
-                          font-size: 0px;
-                          line-height: 0px;
-                          padding: 25px 1px 0px 0px;
-                        "
-                      >
-                        <p style="margin: 1px">
-                          <a
-                            href="https://www.linkedin.com/company/open-minds-club/"
-                            rel="noreferrer"
-                            target="_blank"
-                            data-saferedirecturl="https://www.google.com/url?q=https://www.linkedin.com/company/open-minds-club/&amp;source=gmail&amp;ust=1669061402397000&amp;usg=AOvVaw2Tl0ztfrEXwCFQO72QUBZw"
-                            ><img
-                              src="https://ci6.googleusercontent.com/proxy/D7ndW3A9a1YIVnfj3qHx486Pc9kGAHq0ZAVYRXbEjlOfBsDrSbUrljU7_z6sQFGtOSdnteF2v_BHLDUeyEc1z5GAZ8tndo3Aac3-VoNM8-_iZ43X=s0-d-e1-ft#https://signaturehound.com/api/v1/png/linkedin/default/007bff.png"
-                              alt=""
-                              width="30"
-                              height="30"
-                              style="
-                                display: block;
-                                border: 0px;
-                                max-width: 30px;
-                              "
-                              class="CToWUd"
-                              data-bit="iit"
-                          /></a>
-                        </p>
-                      </td>
-                      <td width="3" style="padding: 0px 0px 1px"></td>
-                      <td
-                        width="30"
-                        style="
-                          font-size: 0px;
-                          line-height: 0px;
-                          padding: 25px 1px 0px 0px;
-                        "
-                      >
-                        <p style="margin: 1px">
-                          <a
-                            href="https://www.instagram.com/openmindsclub/"
-                            rel="noreferrer"
-                            target="_blank"
-                            data-saferedirecturl="https://www.google.com/url?q=https://www.instagram.com/openmindsclub/&amp;source=gmail&amp;ust=1669061402397000&amp;usg=AOvVaw0SGJ0hSBYckTMFj-nYpmy4"
-                            ><img
-                              src="https://ci5.googleusercontent.com/proxy/teoP6b2xoP1gWYR4LGJgZg_OJJsKyvZWH-vLdaY9WXgIpPZiTV28e-bPIyBlg74foC9xQnv5wMGLLbCYUEPlXklxWl4qLHmrRXQgKtoSZ7m8-AT7bg=s0-d-e1-ft#https://signaturehound.com/api/v1/png/instagram/default/007bff.png"
-                              alt=""
-                              width="30"
-                              height="30"
-                              style="
-                                display: block;
-                                border: 0px;
-                                max-width: 30px;
-                              "
-                              class="CToWUd"
-                              data-bit="iit"
-                          /></a>
-                        </p>
-                      </td>
-                      <td width="3" style="padding: 0px 0px 1px"></td>
-                      <td
-                        width="30"
-                        style="
-                          font-size: 0px;
-                          line-height: 0px;
-                          padding: 25px 1px 0px 0px;
-                        "
-                      >
-                        <p style="margin: 1px">
-                          <a
-                            href="https://github.com/openmindsclub"
-                            rel="noreferrer"
-                            target="_blank"
-                            data-saferedirecturl="https://www.google.com/url?q=https://github.com/openmindsclub&amp;source=gmail&amp;ust=1669061402397000&amp;usg=AOvVaw2-8vtuHVLKFVGan1ZEv-u6"
-                            ><img
-                              src="https://ci6.googleusercontent.com/proxy/1tINaR77E12isFaQrDPjhPoiY6BsH1mpOILB1ecDcmmN466fhQIvh_4V7bxogISNvlUeElW_vw8dw_7PBXrlk2Rn_7-A-4k7f6_KysABR8_OQQ=s0-d-e1-ft#https://signaturehound.com/api/v1/png/github/default/007bff.png"
-                              alt=""
-                              width="30"
-                              height="30"
-                              style="
-                                display: block;
-                                border: 0px;
-                                max-width: 30px;
-                              "
-                              class="CToWUd"
-                              data-bit="iit"
-                          /></a>
-                        </p>
-                      </td>
-                      <td width="3" style="padding: 0px 0px 1px"></td>
-                    </tr>
-                  </tbody>
-                </table>
-              </td>
-            </tr>
-            <tr>
-              <td style="padding: 0px 1px 0px 0px"><br /></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+          </table>
+
+          <!-- omc footer -->
+          <div class="footer" style="margin-top: 2rem;">
+            <table cellpadding="0" cellspacing="0" border="0">
+              <tbody>
+                <tr>
+                  <td
+                    style="
+                      padding: 0px 1px 25px 0px;
+                      font-family: Arial, sans-serif;
+                      font-size: 13px;
+                      line-height: 17px;
+                      white-space: nowrap;
+                    "
+                  ></td>
+                </tr>
+                <tr>
+                  <td style="padding: 0px 1px 0px 0px">
+                    <table cellpadding="0" cellspacing="0" border="0">
+                      <tbody>
+                        <tr>
+                          <td
+                            style="
+                              padding: 25px 1px 25px 0px;
+                              border-top: 2px solid rgb(0, 123, 255);
+                              border-bottom: 2px solid rgb(0, 123, 255);
+                            "
+                          >
+                            <table cellpadding="0" cellspacing="0" border="0">
+                              <tbody>
+                                <tr>
+                                  <td
+                                    valign="middle"
+                                    style="padding: 0px 30px 0px 0px"
+                                  >
+                                    <table
+                                      cellpadding="0"
+                                      cellspacing="0"
+                                      border="0"
+                                    >
+                                      <tbody>
+                                        <tr>
+                                          <td style="padding: 0px 1px 0px 0px">
+                                            <p style="margin: 1px">
+                                              <a
+                                                href="https://openmindsclub.net/"
+                                                rel="noreferrer"
+                                                target="_blank"
+                                                ><img
+                                                  src="https://www.openmindsclub.net/assets/omc-logo-8f578c7b.svg"
+                                                  alt=""
+                                                  height="79"
+                                                  style="
+                                                    display: block;
+                                                    border: 0px;
+                                                    max-width: 150px;
+                                                  "
+                                                  class="CToWUd"
+                                                  data-bit="iit"
+                                              /></a>
+                                            </p>
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </td>
+                                  <td
+                                    width="10"
+                                    style="padding: 0px 1px 0px 0px"
+                                  ></td>
+                                  <td style="padding: 0px 1px 0px 0px">
+                                    <table
+                                      cellpadding="0"
+                                      cellspacing="0"
+                                      border="0"
+                                    >
+                                      <tbody>
+                                        <tr>
+                                          <td
+                                            valign="middle"
+                                            style="
+                                              padding: 1px 5px 1px 0px;
+                                              vertical-align: middle;
+                                            "
+                                          >
+                                            <p style="margin: 1px">
+                                              <img
+                                                src="https://ci3.googleusercontent.com/proxy/uLriLhTS24DuFSosOnRAxWu0Q0LHWhTsV-DIMkF4boO2ufLonZM96ynecgwcPVahfmoIFS4qj3Y-0KO-2WdxO8RNLkYfdGF80TFHUGyE9C8j=s0-d-e1-ft#https://signaturehound.com/api/v1/png/email/default/007bff.png"
+                                                alt=""
+                                                width="18"
+                                                height="18"
+                                                style="
+                                                  display: block;
+                                                  border: 0px;
+                                                  max-width: 18px;
+                                                "
+                                                class="CToWUd"
+                                                data-bit="iit"
+                                              />
+                                            </p>
+                                          </td>
+                                          <td
+                                            style="
+                                              line-height: 17px;
+                                              padding: 1px 0px;
+                                              vertical-align: middle;
+                                            "
+                                          >
+                                            <p style="margin: 1px">
+                                              <a
+                                                href="mailto:openmindsclub@gmail.com"
+                                                style="
+                                                  font-family: Arial, sans-serif;
+                                                  font-size: 13px;
+                                                  line-height: 17px;
+                                                  white-space: nowrap;
+                                                  color: #fff;
+                                                "
+                                                rel="noreferrer"
+                                                target="_blank"
+                                                >openmindsclub@gmail.com</a
+                                              >
+                                            </p>
+                                          </td>
+                                        </tr>
+    
+                                        <tr>
+                                          <td
+                                            valign="middle"
+                                            style="
+                                              padding: 1px 5px 1px 0px;
+                                              vertical-align: middle;
+                                            "
+                                          >
+                                            <p style="margin: 1px">
+                                              <img
+                                                src="https://ci5.googleusercontent.com/proxy/ySyKBlDgwc_-Rd0Wzdxs5XdA7NwZc7V6bOb6hZ7aY7NR5XpqP5hWaq50a8tIlkSSxO3kvZq4EqEKxeNpvZ0iz5MzLRKDG5FdWfNlv7QvaQ=s0-d-e1-ft#https://signaturehound.com/api/v1/png/map/default/007bff.png"
+                                                alt=""
+                                                width="18"
+                                                height="18"
+                                                style="
+                                                  display: block;
+                                                  border: 0px;
+                                                  max-width: 18px;
+                                                "
+                                                class="CToWUd"
+                                                data-bit="iit"
+                                              />
+                                            </p>
+                                          </td>
+                                          <td
+                                            style="
+                                              line-height: 17px;
+                                              padding: 1px 0px;
+                                              vertical-align: middle;
+                                            "
+                                          >
+                                            <p style="margin: 1px">
+                                              <a
+                                                href="https://goo.gl/maps/aK2HEnzkUE31CWmw7"
+                                                style="
+                                                  font-family: Arial, sans-serif;
+                                                  font-size: 13px;
+                                                  line-height: 17px;
+                                                  white-space: nowrap;
+                                                  color: #fff;
+                                                "
+                                                rel="noreferrer"
+                                                target="_blank"
+                                                data-saferedirecturl="https://www.google.com/url?q=https://goo.gl/maps/aK2HEnzkUE31CWmw7&amp;source=gmail&amp;ust=1669061402397000&amp;usg=AOvVaw0is83YykyJwTdNoNtd6Hzt"
+                                                >USTHB, Bab Ezzouar, Algeria</a
+                                              >
+                                            </p>
+                                          </td>
+                                        </tr>
+                                        <tr>
+                                          <td
+                                            valign="middle"
+                                            style="
+                                              padding: 1px 5px 1px 0px;
+                                              vertical-align: middle;
+                                            "
+                                          >
+                                            <p style="margin: 1px">
+                                              <img
+                                                src="https://ci3.googleusercontent.com/proxy/L0lEXqvo9FYjHSw13E5H2joJVTy9m9Xhs-8FfCa6RBuuAwJ9QLtR807bpfJljebAF7BMmlXWbQrP6_0rAvpnzb74u6VFRd0RuguRNE9-2o9OPhw=s0-d-e1-ft#https://signaturehound.com/api/v1/png/website/default/007bff.png"
+                                                alt=""
+                                                width="18"
+                                                height="18"
+                                                style="
+                                                  display: block;
+                                                  border: 0px;
+                                                  max-width: 18px;
+                                                "
+                                                class="CToWUd"
+                                                data-bit="iit"
+                                              />
+                                            </p>
+                                          </td>
+                                          <td
+                                            style="
+                                              line-height: 17px;
+                                              padding: 1px 0px;
+                                              vertical-align: middle;
+                                            "
+                                          >
+                                            <p style="margin: 1px">
+                                              <a
+                                                href="https://openmindsclub.net/"
+                                                style="
+                                                  font-family: Arial, sans-serif;
+                                                  font-size: 13px;
+                                                  line-height: 17px;
+                                                  white-space: nowrap;
+                                                  color: rgb(0, 123, 255);
+                                                  font-weight: 700;
+                                                "
+                                                rel="noreferrer"
+                                                target="_blank"
+                                                data-saferedirecturl="https://www.google.com/url?q=https://openmindsclubnet/&amp;source=gmail&amp;ust=1669061402397000&amp;usg=AOvVaw0Zv3T-KbDSkovrtJNqkKPt"
+                                                >openmindsclub.net</a
+                                              >
+                                            </p>
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </td>
+                                  <td
+                                    width="15"
+                                    style="padding: 0px 1px 0px 0px"
+                                  ></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="socials" style="padding: 0px 1px; text-align: center;">
+                    <table cellpadding="0" cellspacing="0" border="0" style="margin: 0 auto; text-align: center;">
+                      <tbody>
+                        <tr>
+                          <td
+                            width="30"
+                            style="font-size: 0px; line-height: 0px; padding: 10px; text-align: center;"
+                          >
+                            <a
+                              href="https://web.facebook.com/openmindsclub"
+                              rel="noreferrer"
+                              target="_blank"
+                            >
+                              <img
+                                src="https://ci5.googleusercontent.com/proxy/jJ50Cl38I8Lqk1cEokSLj_fGdkQpRvtB3oTmxQCzxw_tWVvzs8lXvqD9APc9Dr1PE9w-T3_TLBu5-CsXoZw3Lc2aA-UW9CrfAyuFeVfKS4ACD6X8=s0-d-e1-ft#https://signaturehound.com/api/v1/png/facebook/default/007bff.png"
+                                alt=""
+                                width="30"
+                                height="30"
+                                style="display: block; border: 0px; max-width: 30px;"
+                              />
+                            </a>
+                          </td>
+                          <td
+                            width="30"
+                            style="font-size: 0px; line-height: 0px; padding: 10px; text-align: center;"
+                          >
+                            <a
+                              href="https://www.linkedin.com/company/open-minds-club/"
+                              rel="noreferrer"
+                              target="_blank"
+                            >
+                              <img
+                                src="https://ci6.googleusercontent.com/proxy/D7ndW3A9a1YIVnfj3qHx486Pc9kGAHq0ZAVYRXbEjlOfBsDrSbUrljU7_z6sQFGtOSdnteF2v_BHLDUeyEc1z5GAZ8tndo3Aac3-VoNM8-_iZ43X=s0-d-e1-ft#https://signaturehound.com/api/v1/png/linkedin/default/007bff.png"
+                                alt=""
+                                width="30"
+                                height="30"
+                                style="display: block; border: 0px; max-width: 30px;"
+                              />
+                            </a>
+                          </td>
+                          <td
+                            width="30"
+                            style="font-size: 0px; line-height: 0px; padding: 10px; text-align: center;"
+                          >
+                            <a
+                              href="https://www.instagram.com/openmindsclub/"
+                              rel="noreferrer"
+                              target="_blank"
+                            >
+                              <img
+                                src="https://ci5.googleusercontent.com/proxy/teoP6b2xoP1gWYR4LGJgZg_OJJsKyvZWH-vLdaY9WXgIpPZiTV28e-bPIyBlg74foC9xQnv5wMGLLbCYUEPlXklxWl4qLHmrRXQgKtoSZ7m8-AT7bg=s0-d-e1-ft#https://signaturehound.com/api/v1/png/instagram/default/007bff.png"
+                                alt=""
+                                width="30"
+                                height="30"
+                                style="display: block; border: 0px; max-width: 30px;"
+                              />
+                            </a>
+                          </td>
+                          <td
+                            width="30"
+                            style="font-size: 0px; line-height: 0px; padding: 10px; text-align: center;"
+                          >
+                            <a
+                              href="https://github.com/openmindsclub"
+                              rel="noreferrer"
+                              target="_blank"
+                            >
+                              <img
+                                src="https://ci6.googleusercontent.com/proxy/1tINaR77E12isFaQrDPjhPoiY6BsH1mpOILB1ecDcmmN466fhQIvh_4V7bxogISNvlUeElW_vw8dw_7PBXrlk2Rn_7-A-4k7f6_KysABR8_OQQ=s0-d-e1-ft#https://signaturehound.com/api/v1/png/github/default/007bff.png"
+                                alt=""
+                                width="30"
+                                height="30"
+                                style="display: block; border: 0px; max-width: 30px;"
+                              />
+                            </a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td style="padding: 0px 1px 0px 0px"><br /></td>
+                </tr>
+              </tbody>
+            </table>
+        </td>
+      </tr>
+    </table>
+
+    
   </body>
 </html>

@@ -1,10 +1,6 @@
 [
-    {
-        "name": "aymen",
-        "email": "gh.aymen39@gmail.com"
-    },
-    {
-        "name": "Zineb",
-        "email": "sadoudizeyneep@gmail.com"
-    }
+  {
+    "name": "Example Member",
+    "email": "example@gmail.com"
+  },
 ]

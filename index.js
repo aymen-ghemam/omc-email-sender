@@ -39,14 +39,14 @@ async function send() {
                         toLowerCase()
                         .replace(/./, (x) => x.toUpperCase())
                         .replace(/[^']\b\w/g, (y) => y.toUpperCase())
-                    : "Applicant"
+                    : ""
                 }),
-                attachments: [
-                    {
-                        filename: "agenda.png",
-                        path: "https://media.discordapp.net/attachments/731259416829231167/1086606048334458900/agndaai2-01.png"
-                    }
-                ]
+                // attachments: [
+                //     {
+                //         filename: "agenda.png",
+                //         path: "https://media.discordapp.net/attachments/731259416829231167/1086606048334458900/agndaai2-01.png"
+                //     }
+                // ]
             });
             if(!res || !res.accepted.length){
                 throw new Error("Error sending to: ", member.email);
